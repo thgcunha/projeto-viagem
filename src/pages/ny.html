@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Planejamento de Viagens</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+        <!-- Tailwind CSS -->
+        <link href="../output.css" rel="stylesheet">
+    
+        <!-- Estilos personalizados -->
+        <link rel="stylesheet" href="../style.css">
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+        <!-- JavaScript -->
+        <script src="../js/script.js" defer></script>
+        <link rel="icon" href="../movie/airplane.png" type="image/x-icon">
+    </head>
+    
+<body class="relative min-h-screen  ">
+    <main class="flex-1 min-h-screen">
+        <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover z-0">
+            <source src="/src/movie/coverr-times-square-timelapse-8064-1080p.mp4"
+            type="video/mp4">
+        </video>
+        <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
+
+        <div class="relative z-20 text-center p-8">
+            <h1 
+            class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r 
+            from-white via-gray-100 to-gray-200 drop-shadow-2xl 
+            hover:from-yellow-500 hover:via-red-500 hover:to-blue-500 
+            transition-all duration-500 ease-in-out animate-glow 
+            sm:text-2xl md:text-5xl">
+            Welcome To New York
+        </h1>
+        </div>
+
+        
+        <!-- About Section -->
+        <section class="relative z-20 text-center p-4 text-white text-sm">
+            <h2 class="text-xl font-semibold text-blue-200 mb-2">Sobre a Viagem</h2>
+            <p class="text-base mb-3">Explore Veneza como nunca antes, com pacotes personalizados para você e sua família!<br> Aproveite o melhor desta cidade única, desde seus pontos turísticos clássicos até passeios exclusivos.</p>
+            <a href="#"
+                class="px-4 py-2 bg-indigo-600 text-white rounded-sm hover:bg-indigo-700 transition duration-200 text-sm">
+                Saiba Mais
+            </a>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="relative z-20 text-center p-4 text-sm">
+            <h2 class="text-xl font-semibold text-blue-200 mb-2">Perguntas Frequentes</h2>
+            <div class="space-y-3">
+                <!-- FAQ Item -->
+                <div class="text-center max-w-2xl mx-auto">
+                    <h3 class="p-4 font-medium text-blue-200">Quais são as opções de hospedagem?</h3>
+                    <p class="text-sm text-white">Nós oferecemos opções que vão de hotéis de luxo a apartamentos e hostels para todos os orçamentos.</p>
+                </div>
+                <!-- FAQ Item -->
+                <div class="text-center max-w-2xl mx-auto">
+                    <h3 class="p-4 font-medium text-blue-200">Como faço para fazer a reserva?</h3>
+                    <p class="text-sm text-white">Basta preencher o formulário abaixo e nossa equipe entrará em contato para confirmar os detalhes da sua reserva.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative z-20 text-center p-2">
+            <form class="p-2 rounded-md shadow-md max-w-xs mx-auto bg-gray-800 bg-opacity-90">
+                <h2 class="text-lg font-bold text-blue-200 mb-2">Reserve sua viagem</h2>
+        
+                <!-- Data de Início -->
+                <div class="mb-2 relative">
+                    <label for="data_inicio" class="block text-xs font-medium text-white mb-1">Data de Início</label>
+                    <div class="relative">
+                        <i class="fas fa-calendar-alt absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        <input type="date" id="data_inicio" name="data_inicio"
+                            class="w-full p-1 pl-8 bg-gray-700 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-xs"
+                            required>
+                    </div>
+                </div>
+        
+                <!-- Data de Retorno -->
+                <div class="mb-2 relative">
+                    <label for="data_retorno" class="block text-xs font-medium text-white mb-1">Data de Retorno</label>
+                    <div class="relative">
+                        <i class="fas fa-calendar-alt absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        <input type="date" id="data_retorno" name="data_retorno"
+                            class="w-full p-1 pl-8 bg-gray-700 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-xs"
+                            required>
+                    </div>
+                </div>
+        
+                <!-- Número de Pessoas -->
+                <div class="mb-2 relative">
+                    <label for="numero_pessoas" class="block text-xs font-medium text-white mb-1">Número de Pessoas</label>
+                    <div class="relative">
+                        <i class="fas fa-user-friends absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        <select id="numero_pessoas" name="numero_pessoas"
+                            class="w-full p-1 pl-8 bg-gray-700 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-xs">
+                            <option value="1">1 Pessoa</option>
+                            <option value="2">2 Pessoas</option>
+                            <option value="3">3 Pessoas</option>
+                            <option value="4">4 Pessoas</option>
+                            <option value="5">5 Pessoas</option>
+                            <option value="6">6 Pessoas</option>
+                            <option value="7">7 Pessoas</option>
+                        </select>
+                    </div>
+                </div>
+        
+                <!-- E-mail -->
+                <div class="mb-2 relative">
+                    <label for="email" class="block text-xs font-medium text-white mb-1">E-mail</label>
+                    <div class="relative">
+                        <i class="fas fa-envelope absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        <input type="email" id="email" name="email"
+                            class="w-full p-1 pl-8 bg-gray-700 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-xs"
+                            placeholder="seuemail@exemplo.com" required>
+                    </div>
+                </div>
+        
+                <!-- Botão Enviar -->
+                <div>
+                    <button type="submit"
+                        class="w-full p-1 bg-indigo-600 text-white font-bold rounded-md hover:bg-indigo-700 transition duration-200 text-xs">
+                        <i class="fas fa-paper-plane mr-2"></i> Enviar
+                    </button>
+                </div>
+            </form>
+        </section>
+        
+        
+
+        <!-- Back Button -->
+        <div class="relative z-20 text-center p-4">
+            <a href="/src/index.html">
+                <button class="p-2 bg-gray-700 text-white font-medium rounded-md hover:bg-gray-600 transition duration-200 text-sm">
+                    Voltar
+                </button>
+            </a>
+        </div>
+    </main>
+</body>
+</html>

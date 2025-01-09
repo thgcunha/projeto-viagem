@@ -1,0 +1,87 @@
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+@keyframes fade-in {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 4s ease-in-out;
+}
+
+@keyframes glow {
+  0%, 100% {
+      text-shadow: 0 0 3px rgba(255, 255, 255, 0.5),
+                    0 0 6px rgba(111, 207, 255, 0.3),
+                    0 0 9px rgba(111, 207, 255, 0.2),
+                    0 0 12px rgba(111, 207, 255, 0.1);
+  }
+  50% {
+      text-shadow: 0 0 3px rgba(255, 255, 255, 0.5),
+                  0 0 6px rgba(111, 207, 255, 0.3),
+                  0 0 9px rgba(111, 207, 255, 0.2),
+                  0 0 12px rgba(111, 207, 255, 0.1);
+  }
+}
+
+.animate-glow {
+  animation: glow 3s infinite alternate;
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  z-index: 9999; /* Garante que a mensagem estará acima do vídeo */
+  opacity: 0; /* Começa invisível */
+  transform: translateY(-20px); /* Leve deslocamento para animação */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.notification.show {
+  opacity: 1; /* Mostra a mensagem */
+  transform: translateY(0); /* Remove o deslocamento */
+}
+.notification.success {
+  background-color: #4caf50; /* Verde para sucesso */
+}
+.notification.error {
+  background-color: #f44336; /* Vermelho para erro */
+}
+
+
+
+
+
+
+
+        
+

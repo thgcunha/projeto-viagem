@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planejamento de Viagens</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./movie/airplane.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 0.8s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="relative min-h-screen bg-black text-white  animate-fade-in">
+    <main class="min-h-screen relative">
+        <!-- Vídeo de fundo -->
+        <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover z-0">
+            <source src="movie/coverr-flying-through-the-clouds-5275-1080p.mp4" type="video/mp4">
+        </video>
+
+        <!-- Sobreposição preta -->
+        <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10"></div>
+
+        <!-- Conteúdo principal -->
+        <div class="relative z-20 text-center p-8">
+            <h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-700 via-teal-100 to-sky-500 
+                mb-8 animate-fade-in">
+                Planejamento de Viagens
+            </h1>
+
+            <h2 class="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-teal-200 to-sky-400 
+                mb-6 animate-fade-in">
+                Opções de Viagem
+            </h2>
+        </div>
+        
+
+        <!-- Grid de opções -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-8 py-12 relative z-20">
+            <!-- Card 1: Nova York -->
+            <div class="bg-white bg-opacity-10 rounded-md p-4 shadow-lg hover:scale-105 transform transition-all duration-300">
+                <figure class="overflow-hidden rounded-md">
+                    <img src="https://w.wallhaven.cc/full/r7/wallhaven-r79171.jpg" alt="Nova York" class="w-full h-40 object-cover">
+                </figure>
+                <div class="mt-4">
+                    <h3 class="text-lg font-bold text-white">Nova York, EUA</h3>
+                    <p class="text-sm text-gray-300 mt-2">
+                        Nova York é uma das cidades mais icônicas do mundo, famosa pela Estátua da Liberdade e Times Square.
+                    </p>
+                    <a href="/src/pages/ny.html">
+                        <button class="mt-3 px-4 py-2 bg-sky-500 text-white text-sm font-semibold rounded hover:bg-sky-600">
+                            Planejar Viagem
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2: Zurique -->
+            <div class="bg-white bg-opacity-10 rounded-md p-4 shadow-lg hover:scale-105 transform transition-all duration-300">
+                <figure class="overflow-hidden rounded-md">
+                    <img src="https://w.wallhaven.cc/full/j8/wallhaven-j855qq.jpg" alt="Zurique" class="w-full h-40 object-cover">
+                </figure>
+                <div class="mt-4">
+                    <h3 class="text-lg font-bold text-white">Zurique, Suíça</h3>
+                    <p class="text-sm text-gray-300 mt-2">
+                        Zurique é a maior cidade da Suíça, conhecida por sua qualidade de vida e paisagens alpinas.
+                    </p>
+                    <a href="/src/pages/suica.html">
+                        <button class="mt-3 px-4 py-2 bg-sky-500 text-white text-sm font-semibold rounded hover:bg-sky-600">
+                            Planejar Viagem
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3: Paris -->
+            <div class="bg-white bg-opacity-10 rounded-md p-4 shadow-lg hover:scale-105 transform transition-all duration-300">
+                <figure class="overflow-hidden rounded-md">
+                    <img src="https://w.wallhaven.cc/full/nk/wallhaven-nkp33d.jpg" alt="Paris" class="w-full h-40 object-cover">
+                </figure>
+                <div class="mt-4">
+                    <h3 class="text-lg font-bold text-white">Paris, França</h3>
+                    <p class="text-sm text-gray-300 mt-2">
+                        Paris é a capital mundial da arte e moda, com ícones como a Torre Eiffel e o Museu do Louvre.
+                    </p>
+                    <a href="/src/pages/paris.html">
+                        <button class="mt-3 px-4 py-2 bg-sky-500 text-white text-sm font-semibold rounded hover:bg-sky-600">
+                            Planejar Viagem
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 4: Tóquio -->
+            <div class="bg-white bg-opacity-10 rounded-md p-4 shadow-lg hover:scale-105 transform transition-all duration-300">
+                <figure class="overflow-hidden rounded-md">
+                    <img src="https://wallpapercave.com/wp/wp4118244.jpg" alt="Tóquio" class="w-full h-40 object-cover">
+                </figure>
+                <div class="mt-4">
+                    <h3 class="text-lg font-bold text-white">Tóquio, Japão</h3>
+                    <p class="text-sm text-gray-300 mt-2">
+                        Tóquio combina tradição e modernidade com suas ruas agitadas, tecnologia avançada e templos históricos.
+                    </p>
+                    <a href="/src/pages/toquio.html">
+                        <button class="mt-3 px-4 py-2 bg-sky-500 text-white text-sm font-semibold rounded hover:bg-sky-600">
+                            Planejar Viagem
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 5: Atenas -->
+            <div class="bg-white bg-opacity-10 rounded-md p-4 shadow-lg hover:scale-105 transform transition-all duration-300">
+                <figure class="overflow-hidden rounded-md">
+                    <img src="https://w.wallhaven.cc/full/nk/wallhaven-nkr83m.jpg" alt="Atenas" class="w-full h-40 object-cover">
+                </figure>
+                <div class="mt-4">
+                    <h3 class="text-lg font-bold text-white">Atenas, Grécia</h3>
+                    <p class="text-sm text-gray-300 mt-2">
+                        A Grécia é famosa por suas antigas ruínas, como o Parthenon em Atenas, e suas ilhas paradisíacas.
+                    </p>
+                    <a href="/src/pages/grecia.html">
+                        <button class="mt-3 px-4 py-2 bg-sky-500 text-white text-sm font-semibold rounded hover:bg-sky-600">
+                            Planejar Viagem
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 6: Veneza -->
+            <div class="bg-white bg-opacity-10 rounded-md p-4 shadow-lg hover:scale-105 transform transition-all duration-150">
+                <figure class="overflow-hidden rounded-md">
+                    <img src="https://wallpaperaccess.com/full/3413057.jpg" alt="Veneza" class="w-full h-40 object-cover">
+                </figure>
+                <div class="mt-4">
+                    <h3 class="text-lg font-bold text-white">Veneza, Itália</h3>
+                    <p class="text-sm text-gray-300 mt-2">
+                        Veneza é famosa por seus canais românticos e arquitetura histórica, com a icônica Praça de São Marcos.
+                    </p>
+                    <a href="/src/pages/veneza.html">
+                        <button class="mt-3 px-4 py-2 bg-sky-500 text-white text-sm font-semibold rounded hover:bg-sky-600">
+                            Planejar Viagem
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <footer class="text-center py-6 bg-opacity-70 relative z-20">
+            <p class="text-sm text-gray-300">&copy; 2024 Desenvolvido por Thiago Goncalves Cunha</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="#" target="_blank">
+                    <img src="./movie/whatsapp.png" width="30" alt="WhatsApp">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="./movie/github-sign.png" width="30" alt="GitHub">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="./movie/linkedin.png" width="30" alt="LinkedIn">
+                </a>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>
