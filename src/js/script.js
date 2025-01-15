@@ -79,16 +79,28 @@ document.querySelector('a[href="#"]').addEventListener("click", function (event)
     document.querySelector("#destino").scrollIntoView({ behavior: "smooth" });
 });
 
-// Inicializa o mapa
-function initMap() {
-    const veneza = { lat: 45.4408, lng: 12.3155 };
-    const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 12,
-        center: veneza,
-    });
-    new google.maps.Marker({ position: veneza, map: map });
-}
 
+ // Elementos de controle
+const faqIcon = document.getElementById('faq-icon');
+const faqModal = document.getElementById('faq-modal');
+const closeFaq = document.getElementById('close-faq');
+
+ // Exibir modal ao clicar no ícone
+faqIcon.addEventListener('click', () => {
+    faqModal.classList.remove('hidden');
+});
+
+ // Fechar modal ao clicar no botão
+closeFaq.addEventListener('click', () => {
+    faqModal.classList.add('hidden');
+});
+
+ // Fechar modal ao clicar fora do conteúdo
+faqModal.addEventListener('click', (event) => {
+    if (event.target === faqModal) {
+        faqModal.classList.add('hidden');
+    }
+});
 
 
 
