@@ -46,108 +46,145 @@
             </div>
             hover:from-pink-500 hover:via-purple-500 hover:to-yellow-400
     
-            <!-- About Section -->
-            <section class="relative z-20 text-center p-4 text-white text-sm">
-                <h2 class="text-xl font-semibold text-blue-200 mb-2">Sobre a Viagem</h2>
-                <p class="text-base mb-3">Explore Veneza como nunca antes, com pacotes personalizados para você e sua família!<br> Aproveite o melhor desta cidade única, desde seus pontos turísticos clássicos até passeios exclusivos.</p>
-                <a href="#"
-                    class="px-4 py-2 bg-indigo-600 text-white rounded-sm hover:bg-indigo-700 transition duration-200 text-sm">
-                    Saiba Mais
-                </a>
-            </section>
-    
-            <!-- FAQ Section -->
-            <section class="relative z-20 text-center p-4 text-sm">
-                <h2 class="text-xl font-semibold text-blue-200 mb-2">Perguntas Frequentes</h2>
-                <div class="space-y-3">
-                    <!-- FAQ Item -->
-                    <div class="text-center max-w-2xl mx-auto">
-                        <h3 class="p-4 font-medium text-blue-200">Quais são as opções de hospedagem?</h3>
-                        <p class="text-sm text-white">Nós oferecemos opções que vão de hotéis de luxo a apartamentos e hostels para todos os orçamentos.</p>
-                    </div>
-                    <!-- FAQ Item -->
-                    <div class="text-center max-w-2xl mx-auto">
-                        <h3 class="p-4 font-medium text-blue-200">Como faço para fazer a reserva?</h3>
-                        <p class="text-sm text-white">Basta preencher o formulário abaixo e nossa equipe entrará em contato para confirmar os detalhes da sua reserva.</p>
-                    </div>
+               <!-- About Section -->
+        <section class="relative z-20 text-center p-4 text-white text-sm">
+            <h2 class="text-xl font-semibold text-blue-200 mb-2">Sobre a Viagem</h2>
+            <p class="text-base leading-relaxed mb-7">Explore Veneza como nunca antes, com pacotes personalizados para você e sua família!<br> Aproveite o melhor desta cidade única, desde seus pontos turísticos clássicos até passeios exclusivos.</p>
+            <a href="#"
+                class="px-4 py-2 bg-indigo-600 text-white rounded-sm hover:bg-indigo-700 transition duration-200 text-sm">
+                Saiba Mais
+            </a>
+        </section>
+
+        
+        
+        <!-- Ícone FAQ no canto superior direito -->
+    <div class="fixed top-4 right-20 p-4 z-50"> 
+        <button id="faq-icon" class="text-white text-3xl">
+            <i class="fas fa-question-circle"></i>
+        </button>
+    </div> 
+
+    <!-- Modal FAQ -->
+    <div id="faq-modal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-40">
+        <div class="bg-gray-800 text-white rounded-lg p-6 w-80 max-w-lg">
+            <h2 class="text-xl font-semibold text-blue-200 mb-4 text-center">Perguntas Frequentes</h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="font-medium text-blue-200">Quais são as opções de hospedagem?</h3>
+                    <p class="text-sm text-white">Nós oferecemos opções que vão de hotéis de luxo a apartamentos e hostels para todos os orçamentos.</p>
                 </div>
-            </section>
-    
-            <section class="relative z-20 text-center p-2">
-                <form class="p-2 rounded-md shadow-md max-w-xs mx-auto bg-gray-800 bg-opacity-90">
-                    <h2 class="text-lg font-bold text-blue-200 mb-2">Reserve sua viagem</h2>
-            
-                    <!-- Data de Início -->
-                    <div class="mb-2 relative">
-                        <label for="data_inicio" class="block text-xs font-medium text-white mb-1">Data de Início</label>
-                        <div class="relative">
-                            <i class="fas fa-calendar-alt absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                            <input type="date" id="data_inicio" name="data_inicio"
-                                class="w-full p-1 pl-8 bg-gray-700 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-xs"
-                                required>
-                        </div>
-                    </div>
-            
-                    <!-- Data de Retorno -->
-                    <div class="mb-2 relative">
-                        <label for="data_retorno" class="block text-xs font-medium text-white mb-1">Data de Retorno</label>
-                        <div class="relative">
-                            <i class="fas fa-calendar-alt absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                            <input type="date" id="data_retorno" name="data_retorno"
-                                class="w-full p-1 pl-8 bg-gray-700 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-xs"
-                                required>
-                        </div>
-                    </div>
-            
-                    <!-- Número de Pessoas -->
-                    <div class="mb-2 relative">
-                        <label for="numero_pessoas" class="block text-xs font-medium text-white mb-1">Número de Pessoas</label>
-                        <div class="relative">
-                            <i class="fas fa-user-friends absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                            <select id="numero_pessoas" name="numero_pessoas"
-                                class="w-full p-1 pl-8 bg-gray-700 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-xs">
-                                <option value="1">1 Pessoa</option>
-                                <option value="2">2 Pessoas</option>
-                                <option value="3">3 Pessoas</option>
-                                <option value="4">4 Pessoas</option>
-                                <option value="5">5 Pessoas</option>
-                                <option value="6">6 Pessoas</option>
-                                <option value="7">7 Pessoas</option>
-                            </select>
-                        </div>
-                    </div>
-            
-                    <!-- E-mail -->
-                    <div class="mb-2 relative">
-                        <label for="email" class="block text-xs font-medium text-white mb-1">E-mail</label>
-                        <div class="relative">
-                            <i class="fas fa-envelope absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                            <input type="email" id="email" name="email"
-                                class="w-full p-1 pl-8 bg-gray-700 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-xs"
-                                placeholder="seuemail@exemplo.com" required>
-                        </div>
-                    </div>
-            
-                    <!-- Botão Enviar -->
-                    <div>
-                        <button type="submit"
-                            class="w-full p-1 bg-indigo-600 text-white font-bold rounded-md hover:bg-indigo-700 transition duration-200 text-xs">
-                            <i class="fas fa-paper-plane mr-2"></i> Enviar
-                        </button>
-                    </div>
-                </form>
-            </section>
-            
-            
-    
-            <!-- Back Button -->
-            <div class="relative z-20 text-center p-4">
-                <a href="/index.html">
-                    <button class="p-2 bg-gray-700 text-white font-medium rounded-md hover:bg-gray-600 transition duration-200 text-sm">
-                        Voltar
-                    </button>
-                </a>
+                <div>
+                    <h3 class="font-medium text-blue-200">Como faço para fazer a reserva?</h3>
+                    <p class="text-sm text-white">Basta preencher o formulário abaixo e nossa equipe entrará em contato para confirmar os detalhes da sua reserva.</p>
+                </div>
             </div>
-        </main>
-    </body>
+            <button id="close-faq" class="mt-4 bg-blue-600 px-4 py-2 rounded text-sm w-full">Fechar</button>
+        </div>
+    </div>
+
+    <script>
+        // Elementos de controle
+        const faqIcon = document.getElementById('faq-icon');
+        const faqModal = document.getElementById('faq-modal');
+        const closeFaq = document.getElementById('close-faq');
+
+        // Exibir modal ao clicar no ícone
+        faqIcon.addEventListener('click', () => {
+            faqModal.classList.remove('hidden');
+        });
+
+        // Fechar modal ao clicar no botão
+        closeFaq.addEventListener('click', () => {
+            faqModal.classList.add('hidden');
+        });
+
+        // Fechar modal ao clicar fora do conteúdo
+        faqModal.addEventListener('click', (event) => {
+            if (event.target === faqModal) {
+                faqModal.classList.add('hidden');
+            }
+        });
+    </script>
+
     
+        
+
+<section class="relative z-20 text-center p-4 sm:p-10">
+    <form class="p-4 rounded-md shadow-md max-w-full sm:max-w-xs mx-auto bg-gray-800 bg-opacity-90">
+        <h2 class="text-lg font-bold text-blue-200 mb-4">Reserve sua viagem</h2>
+
+        <!-- Data de Início -->
+        <div class="mb-4">
+            <label for="data_inicio" class="block text-xs font-medium text-white mb-1">Data de Início</label>
+            <div class="flex items-center bg-gray-700 rounded-md border border-gray-600">
+                <i class="fas fa-calendar-alt text-gray-400 p-2"></i>
+                <input type="date" id="data_inicio" name="data_inicio"
+                    class="w-full p-2 bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+                    required>
+            </div>
+        </div>
+
+        <!-- Data de Retorno -->
+        <div class="mb-4">
+            <label for="data_retorno" class="block text-xs font-medium text-white mb-1">Data de Retorno</label>
+            <div class="flex items-center bg-gray-700 rounded-md border border-gray-600">
+                <i class="fas fa-calendar-alt text-gray-400 p-2"></i>
+                <input type="date" id="data_retorno" name="data_retorno"
+                    class="w-full p-2 bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+                    required>
+            </div>
+        </div>
+
+        <!-- Número de Pessoas -->
+        <div class="mb-4">
+            <label for="numero_pessoas" class="block text-xs font-medium text-white mb-1">Número de Pessoas</label>
+            <div class="flex items-center bg-gray-700 rounded-md border border-gray-600">
+                <i class="fas fa-user-friends text-gray-400 p-2"></i>
+                <select id="numero_pessoas" name="numero_pessoas"
+                        class="w-full p-2 bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+                    <option value="1">1 Pessoa</option>
+                    <option value="2">2 Pessoas</option>
+                    <option value="3">3 Pessoas</option>
+                    <option value="4">4 Pessoas</option>
+                    <option value="5">5 Pessoas</option>
+                    <option value="6">6 Pessoas</option>
+                    <option value="7">7 Pessoas</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- E-mail -->
+        <div class="mb-4">
+            <label for="email" class="block text-xs font-medium text-white mb-1">E-mail</label>
+            <div class="flex items-center bg-gray-700 rounded-md border border-gray-600">
+                <i class="fas fa-envelope text-gray-400 p-2"></i>
+                <input type="email" id="email" name="email"
+                    class="w-full p-2 bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+                    placeholder="seuemail@exemplo.com" required>
+            </div>
+        </div>
+        
+                <!-- Botão Enviar -->
+                <div>
+                    <button type="submit"
+                        class="w-full p-1 bg-indigo-600 text-white font-bold rounded-md hover:bg-indigo-700 transition duration-200 text-xs">
+                        <i class="fas fa-paper-plane mr-2"></i> Enviar
+                    </button>
+                </div>
+            </form>
+        </section>
+        
+        
+
+        <!-- Back Button -->
+        <div class="relative z-20 text-center p-4">
+            <a href="/src/index.html">
+                <button class="p-2 bg-gray-700 text-white font-medium rounded-md hover:bg-gray-600 transition duration-200 text-sm">
+                    Voltar
+                </button>
+            </a>
+        </div>
+    </main>
+</body>
+</html>

@@ -77,6 +77,14 @@ body {
   background-color: #f44336; /* Vermelho para erro */
 }
 
+  /* Reposicionamento para telas pequenas */
+@media (max-width: 768px) {
+    #faq-icon {
+        right: 1rem;
+    }
+}
+
+
 
 
 
