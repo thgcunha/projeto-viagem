@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,181 +9,69 @@
     <link rel="icon" href="./movie/airplane.png" type="image/x-icon">
     <link href="./src/output.css" rel="stylesheet">
     <link href="./src/style.css" rel="stylesheet">
-    <link href="./js/script.js" rel="stylesheet">
-
-
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        @keyframes fade-in {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-fade-in {
-            animation: fade-in 0.8s ease-in-out;
-        }
-    </style>
 </head>
-
-<body class="relative min-h-screen bg-black text-white  animate-fade-in">
+<body class="relative min-h-screen bg-black text-white animate-fade-in font-[Poppins]">
     <main class="min-h-screen relative">
         <!-- Vídeo de fundo -->
         <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover z-0">
-            <source src="movie/paginaprincipal.mp4" type="video/mp4">
+            <source src="https://cdn.coverr.co/videos/coverr-airplane-flying-through-the-clouds-1025/720p.mp4 " type="video/mp4">
         </video>
-
+        
         <!-- Sobreposição preta -->
-        <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10"></div>
-
+        <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+        
         <!-- Conteúdo principal -->
         <div class="relative z-20 text-center p-8">
-            <h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-teal-100 to-sky-400 mb-8 animate-fade-in leading-relaxed z-10">
+            <h1 class="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-sky-500 via-teal-100 to-sky-400 mb-8 leading-relaxed">
                 Planejamento de Viagens
             </h1>
-
-            <h2 class="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-teal-200 to-sky-400 
-                mb-6 animate-fade-in">
+            <h2 class="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-teal-200 to-sky-400 mb-6">
                 Opções de Viagem
             </h2>
         </div>
         
-
         <!-- Grid de opções -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-8 py-12 relative z-20">
-            <!-- Card 1: Nova York -->
-            <div class="bg-white bg-opacity-10 rounded-md p-4 shadow-lg hover:scale-105 transform transition-all duration-300">
-                <figure class="overflow-hidden rounded-md">
-                    <img src="https://w.wallhaven.cc/full/r7/wallhaven-r79171.jpg" alt="Nova York" class="w-full h-40 object-cover">
-                </figure>
-                <div class="mt-4">
-                    <h3 class="text-lg font-bold text-white">Nova York, EUA</h3>
-                    <p class="text-sm text-gray-300 mt-2">
-                        Nova York é uma das cidades mais icônicas do mundo, famosa pela Estátua da Liberdade e Times Square.
-                    </p>
-                    <a href="/pages/ny.html">
-                        <button class="mt-3 px-4 py-2 bg-sky-500 text-white text-sm font-semibold rounded hover:bg-sky-600">
-                            Planejar Viagem
-                        </button>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 2: Zurique -->
-            <div class="bg-white bg-opacity-10 rounded-md p-4 shadow-lg hover:scale-105 transform transition-all duration-300">
-                <figure class="overflow-hidden rounded-md">
-                    <img src="https://images.unsplash.com/photo-1657410283156-58176704e858?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Zurique" class="w-full h-40 object-cover">
-                </figure>
-                <div class="mt-4">
-                    <h3 class="text-lg font-bold text-white">Zurique, Suíça</h3>
-                    <p class="text-sm text-gray-300 mt-2">
-                        Zurique é a maior cidade da Suíça, conhecida por sua qualidade de vida e paisagens alpinas.
-                    </p>
-                    <a href="/pages/suica.html">
-                        <button class="mt-3 px-4 py-2 bg-sky-500 text-white text-sm font-semibold rounded hover:bg-sky-600">
-                            Planejar Viagem
-                        </button>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 3: Paris -->
-            <div class="bg-white bg-opacity-10 rounded-md p-4 shadow-lg hover:scale-105 transform transition-all duration-300">
-                <figure class="overflow-hidden rounded-md">
-                    <img src="https://w.wallhaven.cc/full/nk/wallhaven-nkp33d.jpg" alt="Paris" class="w-full h-40 object-cover">
-                </figure>
-                <div class="mt-4">
-                    <h3 class="text-lg font-bold text-white">Paris, França</h3>
-                    <p class="text-sm text-gray-300 mt-2">
-                        Paris é a capital mundial da arte e moda, com ícones como a Torre Eiffel e o Museu do Louvre.
-                    </p>
-                    <a href="/pages/paris.html">
-                        <button class="mt-3 px-4 py-2 bg-sky-500 text-white text-sm font-semibold rounded hover:bg-sky-600">
-                            Planejar Viagem
-                        </button>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 4: Tóquio -->
-            <div class="bg-white bg-opacity-10 rounded-md p-4 shadow-lg hover:scale-105 transform transition-all duration-300">
-                <figure class="overflow-hidden rounded-md">
-                    <img src="https://wallpapercave.com/wp/wp4118244.jpg" alt="Tóquio" class="w-full h-40 object-cover">
-                </figure>
-                <div class="mt-4">
-                    <h3 class="text-lg font-bold text-white">Tóquio, Japão</h3>
-                    <p class="text-sm text-gray-300 mt-2">
-                        Tóquio combina tradição e modernidade com suas ruas agitadas, tecnologia avançada e templos históricos.
-                    </p>
-                    <a href="/pages/toquio.html">
-                        <button class="mt-3 px-4 py-2 bg-sky-500 text-white text-sm font-semibold rounded hover:bg-sky-600">
-                            Planejar Viagem
-                        </button>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 5: Atenas -->
-            <div class="bg-white bg-opacity-10 rounded-md p-4 shadow-lg hover:scale-105 transform transition-all duration-300">
-                <figure class="overflow-hidden rounded-md">
-                    <img src="https://w.wallhaven.cc/full/nk/wallhaven-nkr83m.jpg" alt="Atenas" class="w-full h-40 object-cover">
-                </figure>
-                <div class="mt-4">
-                    <h3 class="text-lg font-bold text-white">Atenas, Grécia</h3>
-                    <p class="text-sm text-gray-300 mt-2">
-                        A Grécia é famosa por suas antigas ruínas, como o Parthenon em Atenas, e suas ilhas paradisíacas.
-                    </p>
-                    <a href="/pages/grecia.html">
-                        <button class="mt-3 px-4 py-2 bg-sky-500 text-white text-sm font-semibold rounded hover:bg-sky-600">
-                            Planejar Viagem
-                        </button>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 6: Veneza -->
-            <div class="bg-white bg-opacity-10 rounded-md p-4 shadow-lg hover:scale-105 transform transition-all duration-150">
-                <figure class="overflow-hidden rounded-md">
-                    <img src="https://wallpaperaccess.com/full/3413057.jpg" alt="Veneza" class="w-full h-40 object-cover">
-                </figure>
-                <div class="mt-4">
-                    <h3 class="text-lg font-bold text-white">Veneza, Itália</h3>
-                    <p class="text-sm text-gray-300 mt-2">
-                        Veneza é famosa por seus canais românticos e arquitetura histórica, com a icônica Praça de São Marcos.
-                    </p>
-                    <a href="/pages/veneza.html">
-                        <button class="mt-3 px-4 py-2 bg-sky-500 text-white text-sm font-semibold rounded hover:bg-sky-600">
-                            Planejar Viagem
-                        </button>
-                    </a>
-                </div>
-            </div>
+            <!-- Template de cards -->
+            <script>
+                const destinos = [
+                    { nome: "Nova York, EUA", imagem: "https://w.wallhaven.cc/full/r7/wallhaven-r79171.jpg", descricao: "Famosa pela Estátua da Liberdade e Times Square.", link: "/src/pages/ny.html" },
+                    { nome: "Zurique, Suíça", imagem: "https://images.unsplash.com/photo-1657410283156-58176704e858?q=80&w=870", descricao: "Conhecida por sua qualidade de vida e paisagens alpinas.", link: "/src/pages/suica.html" },
+                    { nome: "Paris, França", imagem: "https://w.wallhaven.cc/full/nk/wallhaven-nkp33d.jpg", descricao: "Torre Eiffel, Louvre e a capital mundial da moda.", link: "/src/pages/paris.html" },
+                    { nome: "Tóquio, Japão", imagem: "https://wallpapercave.com/wp/wp4118244.jpg", descricao: "Tradição e modernidade se encontram aqui.", link: "/src/pages/toquio.html" },
+                    { nome: "Atenas, Grécia", imagem: "https://w.wallhaven.cc/full/nk/wallhaven-nkr83m.jpg", descricao: "Ruínas históricas e ilhas paradisíacas.", link: "/src/pages/grecia.html" },
+                    { nome: "Veneza, Itália", imagem: "https://wallpaperaccess.com/full/3413057.jpg", descricao: "Canais românticos e arquitetura icônica.", link: "/src/pages/veneza.html" }
+                ];
+                
+                document.write(destinos.map(destino => `
+                    <div class='bg-white bg-opacity-10 rounded-md p-4 shadow-lg hover:scale-105 transition-all duration-300'>
+                        <figure class='overflow-hidden rounded-md'>
+                            <img src='${destino.imagem}' alt='${destino.nome}' class='w-full h-40 object-cover'>
+                        </figure>
+                        <div class='mt-4'>
+                            <h3 class='text-lg font-bold text-white'>${destino.nome}</h3>
+                            <p class='text-sm text-gray-300 mt-2'>${destino.descricao}</p>
+                            <a href='${destino.link}'>
+                                <button class='mt-3 px-4 py-2 bg-sky-500 text-white text-sm font-semibold rounded hover:bg-sky-600'>
+                                    Planejar Viagem
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                `).join(''));
+            </script>
         </div>
-
+        
         <!-- Rodapé -->
         <footer class="text-center py-6 bg-opacity-70 relative z-20">
-            <p class="text-sm text-gray-300">&copy; 2024 Desenvolvido por Thiago Goncalves Cunha</p>
+            <p class="text-sm text-gray-300">&copy; 2024 Desenvolvido por Thiago Gonçalves</p>
             <div class="flex justify-center space-x-4 mt-4">
-                <a href="#" target="_blank">
-                    <img src="./movie/whatsapp.png" width="30" alt="WhatsApp">
-                </a>
-                <a href="#" target="_blank">
-                    <img src="./movie/github-sign.png" width="30" alt="GitHub">
-                </a>
-                <a href="#" target="_blank">
-                    <img src="./movie/linkedin.png" width="30" alt="LinkedIn">
-                </a>
+                <a href="https://wa.me/6284536469" target="_blank"><img src="./movie/whatsapp.png" width="30" alt="WhatsApp"></a>
+                <a href="https://github.com/thgcunha" target="_blank"><img src="./movie/github-sign.png" width="30" alt="GitHub"></a>
+                <a href="https://www.linkedin.com/in/thiagogcunha/" target="_blank"><img src="./movie/linkedin.png" width="30" alt="LinkedIn"></a>
             </div>
         </footer>
     </main>
 </body>
-
 </html>
+

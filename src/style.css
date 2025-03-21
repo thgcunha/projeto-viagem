@@ -53,28 +53,42 @@ body {
 
 .notification {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 10px 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 30px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  font-size: 14px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
   font-weight: bold;
   color: white;
-  z-index: 9999; /* Garante que a mensagem estará acima do vídeo */
-  opacity: 0; /* Começa invisível */
-  transform: translateY(-20px); /* Leve deslocamento para animação */
+  z-index: 10000; /* Garante que estará acima de tudo */
+  opacity: 0;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
+/* Fundo escuro para cobrir a tela */
+.notification-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  display: none;
+}
+
 .notification.show {
-  opacity: 1; /* Mostra a mensagem */
-  transform: translateY(0); /* Remove o deslocamento */
+  opacity: 1;
 }
+
 .notification.success {
-  background-color: #4caf50; /* Verde para sucesso */
+  background-color: #4caf50;
 }
+
 .notification.error {
-  background-color: #f44336; /* Vermelho para erro */
+  background-color: #f44336;
 }
 
   /* Reposicionamento para telas pequenas */
