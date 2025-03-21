@@ -91,11 +91,31 @@ body {
   background-color: #f44336;
 }
 
-  /* Reposicionamento para telas pequenas */
+
+
+/* Estilos para o modal em telas pequenas */
 @media (max-width: 768px) {
-    #faq-icon {
-        right: 1rem;
-    }
+  #faq-icon {
+      right: 1rem;
+      top: 1rem;
+  }
+
+  #faq-modal div {
+      width: 90%;
+      padding: 1.5rem;
+  }
+
+  #faq-modal h2 {
+      font-size: 1.25rem;
+  }
+
+  #faq-modal h3 {
+      font-size: 1rem;
+  }
+
+  #faq-modal p {
+      font-size: 0.875rem;
+  }
 }
 
 

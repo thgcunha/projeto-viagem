@@ -1,3 +1,28 @@
+// Função para trocar o vídeo com base no tamanho da tela
+function updateVideoSource() {
+    const videoElement = document.getElementById('background-video');
+    const sourceElement = document.getElementById('video-source');
+    const isMobile = window.innerWidth <= 768;
+
+    if (isMobile) {
+        // Troca para GIF ou vídeo leve em telas pequenas
+        sourceElement.setAttribute('src', 'src/movie/blue sky clouds GIF by hateplow.gif');
+        videoElement.load(); // Recarrega o vídeo
+    } else {
+        // Volta ao vídeo original em telas maiores
+        sourceElement.setAttribute('src', 'https://cdn.coverr.co/videos/coverr-airplane-flying-through-the-clouds-1025/720p.mp4');
+        videoElement.load(); // Recarrega o vídeo
+    }
+}
+
+// Atualiza o vídeo quando a página carrega
+window.addEventListener('load', updateVideoSource);
+
+// Atualiza o vídeo quando a janela é redimensionada
+window.addEventListener('resize', updateVideoSource);
+
+
+
 window.addEventListener('scroll', function () {
     const video = document.querySelector('video');
     if (video) {
