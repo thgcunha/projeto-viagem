@@ -14,12 +14,14 @@
     <main class="min-h-screen relative">
         <!-- Vídeo de fundo -->
         
-        
-        <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0 max-w-full max-h-full">
-            <source src="https://cdn.coverr.co/videos/coverr-airplane-flying-through-the-clouds-1025/720p.mp4" type="video/mp4">
-            <!-- Fallback para GIF animado -->
-            <img src="src/movie/blue sky clouds GIF by hateplow.gif" alt="Fallback" class="absolute top-0 left-0 w-full h-full object-cover z-0">
-        </video>
+        <video autoplay muted loop playsinline 
+        class="absolute top-0 left-0 w-full h-full object-cover z-0 hidden sm:block">
+        <source src="https://cdn.coverr.co/videos/coverr-airplane-flying-through-the-clouds-1025/720p.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Imagem alternativa para telas menores -->
+    <img src="https://w.wallhaven.cc/full/2y/wallhaven-2y5jv9.jpg" alt="Imagem alternativa" 
+        class="absolute top-0 left-0 w-full h-full object-cover z-0 block sm:hidden">
         <!-- Sobreposição preta -->
         <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
         
@@ -42,7 +44,7 @@
                     { nome: "Zurique, Suíça", imagem: "https://images.unsplash.com/photo-1657410283156-58176704e858?q=80&w=870", descricao: "Conhecida por sua qualidade de vida e paisagens alpinas.", link: "/pages/suica.html" },
                     { nome: "Paris, França", imagem: "https://w.wallhaven.cc/full/nk/wallhaven-nkp33d.jpg", descricao: "Torre Eiffel, Louvre e a capital mundial da moda.", link: "/pages/paris.html" },
                     { nome: "Tóquio, Japão", imagem: "https://wallpapercave.com/wp/wp4118244.jpg", descricao: "Tradição e modernidade se encontram aqui.", link: "/pages/toquio.html" },
-                    { nome: "Atenas, Grécia", imagem: "https://w.wallhaven.cc/full/nk/wallhaven-nkr83m.jpg", descricao: "Ruínas históricas e ilhas paradisíacas.", link: "/pages/grecia.html" },
+                    { nome: "Mykonos, Grécia", imagem: "https://w.wallhaven.cc/full/nk/wallhaven-nkr83m.jpg", descricao: "Ruínas históricas e ilhas paradisíacas.", link: "/pages/grecia.html" },
                     { nome: "Veneza, Itália", imagem: "https://wallpaperaccess.com/full/3413057.jpg", descricao: "Canais românticos e arquitetura icônica.", link: "/pages/veneza.html" }
                 ];
                 

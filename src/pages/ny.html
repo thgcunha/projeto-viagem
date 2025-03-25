@@ -23,10 +23,14 @@
     
 <body class="relative min-h-screen">
     <main class="flex-1 min-h-screen">
-        <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover z-0">
-            <source src="https://videos.pexels.com/video-files/3029469/3029469-hd_1920_1080_24fps.mp4"
-            type="video/mp4">
+        
+        <video autoplay muted loop playsinline 
+        class="absolute top-0 left-0 w-full h-full object-cover z-0 hidden sm:block">
+        <source src="https://videos.pexels.com/video-files/3029469/3029469-hd_1920_1080_24fps.mp4" type="video/mp4">
         </video>
+
+        <!-- Imagem alternativa para telas menores -->
+        <img src="https://w.wallhaven.cc/full/p2/wallhaven-p2l5ee.jpg" alt="Imagem alternativa" >
         <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
 
         <div class="relative z-20 text-center p-8">

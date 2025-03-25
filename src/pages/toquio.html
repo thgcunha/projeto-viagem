@@ -26,11 +26,17 @@
 
 <body class="relative min-h-screen">
     <main class="relative min-h-screen">
+        
 
         <!-- Vídeo de fundo -->
-        <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover">
-            <source src="https://videos.pexels.com/video-files/5846296/5846296-uhd_2732_1440_24fps.mp4" type="video/mp4">
-        </video>
+        <video autoplay muted loop playsinline 
+        class="absolute top-0 left-0 w-full h-full object-cover z-0 hidden sm:block">
+        <source src="https://videos.pexels.com/video-files/5846296/5846296-uhd_2732_1440_24fps.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Imagem alternativa para telas menores -->
+    <img src="https://w.wallhaven.cc/full/wq/wallhaven-wqygwx.jpg" alt="Imagem alternativa" 
+        class="absolute top-0 left-0 w-full h-full object-cover z-0 block sm:hidden">
 
         <!-- Overlay escuro -->
         <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70"></div>
