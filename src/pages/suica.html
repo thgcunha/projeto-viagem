@@ -11,7 +11,7 @@
 
     <!-- Tailwind CSS -->
     <link href="../output.css" rel="stylesheet">
-    
+
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="../style.css">
 
@@ -22,18 +22,19 @@
 </head>
 
 <body class="relative min-h-screen">
-    
+
     <main class="flex-1 min-h-screen">
         <!-- Vídeo de fundo -->
-        <video autoplay muted loop playsinline 
-        class="absolute top-0 left-0 w-full h-full object-cover z-0 hidden sm:block">
-        <source src=" https://videos.pexels.com/video-files/3655214/3655214-uhd_2560_1440_30fps.mp4" type="video/mp4">
-    </video>
-    
-    <!-- Imagem alternativa para telas menores -->
-    <img src="https://w.wallhaven.cc/full/13/wallhaven-137d33.jpg" alt="Imagem alternativa" 
-        class="absolute top-0 left-0 w-full h-full object-cover z-0 block sm:hidden">
-        
+        <video autoplay muted loop playsinline
+            class="absolute top-0 left-0 w-full h-full object-cover z-0 hidden sm:block">
+            <source src=" https://videos.pexels.com/video-files/3655214/3655214-uhd_2560_1440_30fps.mp4"
+                type="video/mp4">
+        </video>
+
+        <!-- Imagem alternativa para telas menores -->
+        <img src="https://w.wallhaven.cc/full/13/wallhaven-137d33.jpg" alt="Imagem alternativa"
+            class="absolute top-0 left-0 w-full h-full object-cover z-0 block sm:hidden">
+
         <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
 
         <!-- Título principal -->
@@ -54,7 +55,8 @@
                 Descubra a beleza da Suíça! Desde os Alpes cobertos de neve até as cidades históricas,
                 oferecemos pacotes exclusivos para uma experiência inesquecível.
             </p>
-            <a href="#" class="px-4 py-2 bg-indigo-600 text-white rounded-sm hover:bg-indigo-700 transition duration-200 text-sm">
+            <a href="#"
+                class="px-4 py-2 bg-indigo-600 text-white rounded-sm hover:bg-indigo-700 transition duration-200 text-sm">
                 Saiba Mais
             </a>
         </section>
@@ -66,25 +68,30 @@
             </button>
         </div>
 
-        <!-- Modal FAQ -->
-        <div id="faq-modal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-40">
-            <div class="bg-gray-800 text-white rounded-lg p-6 w-80 max-w-lg">
+        <div id="faq-modal"
+            class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-40 transition-opacity duration-300">
+            <div class="bg-gray-800 text-white rounded-lg p-6 w-11/12 sm:w-80 max-w-lg mx-4 sm:mx-0">
                 <h2 class="text-xl font-semibold text-blue-200 mb-4 text-center">Perguntas Frequentes</h2>
                 <div class="space-y-4">
                     <div>
                         <h3 class="font-medium text-blue-200">Quais são as opções de hospedagem?</h3>
-                        <p class="text-sm text-white">Oferecemos hotéis de luxo, apartamentos e hostels para todos os orçamentos.</p>
+                        <p class="text-sm text-gray-300">Nós oferecemos opções que vão de hotéis de luxo a apartamentos
+                            e hostels para todos os orçamentos.</p>
                     </div>
                     <div>
                         <h3 class="font-medium text-blue-200">Como faço para fazer a reserva?</h3>
-                        <p class="text-sm text-white">Basta preencher o formulário abaixo e nossa equipe entrará em contato para confirmar os detalhes.</p>
+                        <p class="text-sm text-gray-300">Basta preencher o formulário abaixo e nossa equipe entrará em
+                            contato para confirmar os detalhes da sua reserva.</p>
                     </div>
                 </div>
-                <button id="close-faq" class="mt-4 bg-blue-600 px-4 py-2 rounded text-sm w-full">Fechar</button>
+                <button id="close-faq"
+                    class="mt-4 bg-blue-600 px-4 py-2 rounded text-sm w-full hover:bg-blue-700 transition-colors duration-200">
+                    Fechar
+                </button>
             </div>
         </div>
 
-        
+
         <!-- Formulário de Reserva -->
         <section class="relative z-20 text-center p-4 sm:p-10">
             <form class="p-4 rounded-md shadow-md max-w-full sm:max-w-xs mx-auto bg-gray-800 bg-opacity-90">
@@ -105,7 +112,8 @@
                 </div>
 
                 <div class="mb-4">
-                    <label for="numero_pessoas" class="block text-xs font-medium text-white mb-1">Número de Pessoas</label>
+                    <label for="numero_pessoas" class="block text-xs font-medium text-white mb-1">Número de
+                        Pessoas</label>
                     <select id="numero_pessoas" name="numero_pessoas"
                         class="w-full p-2 bg-gray-700 text-white rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
                         <option value="1">1 Pessoa</option>
@@ -135,7 +143,8 @@
         <!-- Botão Voltar -->
         <div class="relative z-20 text-center p-4">
             <a href="/index.html">
-                <button class="p-2 bg-gray-700 text-white font-medium rounded-md hover:bg-gray-600 transition duration-200 text-sm">
+                <button
+                    class="p-2 bg-gray-700 text-white font-medium rounded-md hover:bg-gray-600 transition duration-200 text-sm">
                     Voltar
                 </button>
             </a>
