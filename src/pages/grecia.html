@@ -1,169 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planejamento de Viagens</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-                
+    <!-- Tailwind CSS -->
+    <link href="../output.css" rel="stylesheet">
 
-                
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="../style.css">
 
-                
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
+    <!-- JavaScript -->
+    <script src="../js/script.js" defer></script>
+    <link rel="icon" href="../movie/airplane.png" type="image/x-icon">
+</head>
 
+<body class="relative min-h-screen  ">
 
-                <!DOCTYPE html>
-                <html lang="pt-br">
-                
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Planejamento de Viagens</title>
-                    <script src="https://cdn.tailwindcss.com"></script>
-                    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-                
-                    <!-- Tailwind CSS -->
-                    <link href="../output.css" rel="stylesheet">
-                
-                    <!-- Estilos personalizados -->
-                    <link rel="stylesheet" href="../style.css">
-                
-                    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-                
-                    <!-- JavaScript -->
-                    <script src="../js/script.js" defer></script>
-                    <link rel="icon" href="../movie/airplane.png" type="image/x-icon">
-                </head>
-                
-                <body class="relative min-h-screen  ">
-                
-                    <main class="flex-1 min-h-screen">
-                
-                        <!-- Vídeo de fundo -->
-                        <video autoplay muted loop playsinline
-                            class="absolute top-0 left-0 w-full h-full object-cover z-0 hidden sm:block">
-                            <source src="https://videos.pexels.com/video-files/6522955/6522955-uhd_2560_1440_30fps.mp4" type="video/mp4">
-                        </video>
-                
-                        <!-- Imagem alternativa para telas menores -->
-                        <img src="https://w.wallhaven.cc/full/yj/wallhaven-yjqkrx.jpg" alt="Imagem alternativa"
-                            class="absolute top-0 left-0 w-full h-full object-cover z-0 block sm:hidden">
-                        <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
-                
-                        <div class="relative z-20 text-center p-8">
-                            <!-- Título principal -->
-                            <div class="relative z-20 text-center p-8">
-                                <h1 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r 
+    <main class="flex-1 min-h-screen">
+
+        <!-- Vídeo de fundo -->
+        <video autoplay muted loop playsinline
+            class="absolute top-0 left-0 w-full h-full object-cover z-0 hidden sm:block">
+            <source src="https://videos.pexels.com/video-files/6522955/6522955-uhd_2560_1440_30fps.mp4"
+                type="video/mp4">
+        </video>
+
+        <!-- Imagem alternativa para telas menores -->
+        <img src="https://w.wallhaven.cc/full/yj/wallhaven-yjqkrx.jpg" alt="Imagem alternativa"
+            class="absolute top-0 left-0 w-full h-full object-cover z-0 block sm:hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10"></div>
+
+        <div class="relative z-20 text-center p-8">
+            <!-- Título principal -->
+            <div class="relative z-20 text-center p-8">
+                <h1 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r 
                                                     from-white via-gray-100 to-gray-200 drop-shadow-2xl 
                                                     hover:from-yellow-500 hover:via-red-500 hover:to-blue-500 
                                                     transition-all duration-500 ease-in-out animate-glow 
                                                     sm:text-2xl md:text-5xl">
-                                                    καλώς ήρθες στην Ελλάδα
-                                </h1>
-                            </div>
-                
-                            <!-- Seção "Sobre a Viagem" -->
-                            <section class="relative z-20 text-center p-4 text-white text-sm">
-                                <h2 class="text-xl font-semibold text-blue-200 mb-2">Sobre a Viagem</h2>
-                                <p class="text-base leading-relaxed mb-7">
-                                    Explore a Grécia como nunca antes, com pacotes personalizados para
-                                    você e sua família!<br> Aproveite o melhor desta cidade histórica, com suas belas paisagens, cultura
-                                    rica e arquitetura única.</p>
-                                </p>
-                                <a href="#"
-                                    class="px-4 py-2 bg-indigo-600 text-white rounded-sm hover:bg-indigo-700 transition duration-200 text-sm">
-                                    Saiba Mais
-                                </a>
-                            </section>
-                
-                            <!-- Ícone FAQ no canto superior direito -->
-                            <div class="fixed top-4 right-20 p-4 z-50">
-                                <button id="faq-icon" class="text-white text-3xl">
-                                    <i class="fas fa-question-circle"></i>
-                                </button>
-                            </div>
-                
-                            <div id="faq-modal"
-                                class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-40 transition-opacity duration-300">
-                                <div class="bg-gray-800 text-white rounded-lg p-6 w-11/12 sm:w-80 max-w-lg mx-4 sm:mx-0">
-                                    <h2 class="text-xl font-semibold text-blue-200 mb-4 text-center">Perguntas Frequentes</h2>
-                                    <div class="space-y-4">
-                                        <div>
-                                            <h3 class="font-medium text-blue-200">Quais são as opções de hospedagem?</h3>
-                                            <p class="text-sm text-gray-300">Nós oferecemos opções que vão de hotéis de luxo a
-                                                apartamentos
-                                                e hostels para todos os orçamentos.</p>
-                                        </div>
-                                        <div>
-                                            <h3 class="font-medium text-blue-200">Como faço para fazer a reserva?</h3>
-                                            <p class="text-sm text-gray-300">Basta preencher o formulário abaixo e nossa equipe entrará
-                                                em
-                                                contato para confirmar os detalhes da sua reserva.</p>
-                                        </div>
-                                    </div>
-                                    <button id="close-faq"
-                                        class="mt-4 bg-blue-600 px-4 py-2 rounded text-sm w-full hover:bg-blue-700 transition-colors duration-200">
-                                        Fechar
-                                    </button>
-                                </div>
-                            </div>
-                
-                
-                
-                            <!-- Formulário de Reserva -->
-                            <section id="formulario" class="relative z-20 text-center p-4 sm:p-10">
-                                <form class="p-4 rounded-md shadow-md max-w-full sm:max-w-xs mx-auto bg-gray-800 bg-opacity-90">
-                                    <h2 class="text-lg font-bold text-blue-200 mb-4">Reserve sua viagem</h2>
-                
-                                    <!-- Data de Início -->
-                                    <div class="mb-4">
-                                        <label class="block text-xs font-medium text-white mb-1">Data de Início</label>
-                                        <input type="date" id="data_inicio" required
-                                            class="w-full p-2 bg-gray-700 text-white rounded focus:ring-2 focus:ring-indigo-500 text-sm">
-                                    </div>
-                
-                                    <!-- Data de Retorno -->
-                                    <div class="mb-4">
-                                        <label class="block text-xs font-medium text-white mb-1">Data de Retorno</label>
-                                        <input type="date" id="data_retorno" required
-                                            class="w-full p-2 bg-gray-700 text-white rounded focus:ring-2 focus:ring-indigo-500 text-sm">
-                                    </div>
-                
-                                    <!-- Número de Pessoas -->
-                                    <div class="mb-4">
-                                        <label class="block text-xs font-medium text-white mb-1">Número de Pessoas</label>
-                                        <select id="numero_pessoas"
-                                            class="w-full p-2 bg-gray-700 text-white rounded focus:ring-2 focus:ring-indigo-500 text-sm">
-                                            <option value="1">1 Pessoa</option>
-                                            <option value="2">2 Pessoas</option>
-                                            <option value="3">3 Pessoas</option>
-                                            <option value="4">4 Pessoas</option>
-                                            <option value="5">5 Pessoas</option>
-                                            <option value="6">6 Pessoas</option>
-                                            <option value="7">7 Pessoas</option>
-                                        </select>
-                                    </div>
-                
-                                    <!-- E-mail -->
-                                    <div class="mb-4">
-                                        <label class="block text-xs font-medium text-white mb-1">E-mail</label>
-                                        <input type="email" id="email" placeholder="seuemail@exemplo.com" required
-                                            class="w-full p-2 bg-gray-700 text-white rounded focus:ring-2 focus:ring-indigo-500 text-sm">
-                                    </div>
-                
-                                    <!-- Botão Enviar -->
-                                    <button type="submit"
-                                        class="w-full p-2 bg-indigo-600 text-white font-bold rounded-md hover:bg-indigo-700 transition duration-200 text-sm">
-                                        <i class="fas fa-paper-plane mr-2"></i> Enviar
-                                    </button>
-                                </form>
-                            </section>
-                            <!-- Botão Voltar -->
-                            <div class="relative z-20 text-center p-4">
-                                <a href="/index.html">
-                                    <button
-                                        class="p-2 bg-gray-700 text-white font-medium rounded-md hover:bg-gray-600 transition duration-200 text-sm">
-                                        Voltar
-                                    </button>
-                                </a>
-                            </div>
-                    </main>
-                </body>
-                
-                </html>
+                    καλώς ήρθες στην Ελλάδα
+                </h1>
+            </div>
+
+            <!-- Seção "Sobre a Viagem" -->
+            <section class="relative z-20 text-center p-4 text-white text-sm">
+                <h2 class="text-xl font-semibold text-blue-200 mb-2">Sobre a Viagem</h2>
+                <p class="text-base leading-relaxed mb-7">
+                    Explore a Grécia como nunca antes, com pacotes personalizados para
+                    você e sua família!<br> Aproveite o melhor desta cidade histórica, com suas belas paisagens, cultura
+                    rica e arquitetura única.</p>
+                </p>
+                <a href="#"
+                    class="px-4 py-2 bg-indigo-600 text-white rounded-sm hover:bg-indigo-700 transition duration-200 text-sm">
+                    Saiba Mais
+                </a>
+            </section>
+
+            <!-- Ícone FAQ no canto superior direito -->
+            <div class="fixed top-4 right-20 p-4 z-50">
+                <button id="faq-icon" class="text-white text-3xl">
+                    <i class="fas fa-question-circle"></i>
+                </button>
+            </div>
+
+            <div id="faq-modal"
+                class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-40 transition-opacity duration-300">
+                <div class="bg-gray-800 text-white rounded-lg p-6 w-11/12 sm:w-80 max-w-lg mx-4 sm:mx-0">
+                    <h2 class="text-xl font-semibold text-blue-200 mb-4 text-center">Perguntas Frequentes</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-medium text-blue-200">Quais são as opções de hospedagem?</h3>
+                            <p class="text-sm text-gray-300">Nós oferecemos opções que vão de hotéis de luxo a
+                                apartamentos
+                                e hostels para todos os orçamentos.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-blue-200">Como faço para fazer a reserva?</h3>
+                            <p class="text-sm text-gray-300">Basta preencher o formulário abaixo e nossa equipe entrará
+                                em
+                                contato para confirmar os detalhes da sua reserva.</p>
+                        </div>
+                    </div>
+                    <button id="close-faq"
+                        class="mt-4 bg-blue-600 px-4 py-2 rounded text-sm w-full hover:bg-blue-700 transition-colors duration-200">
+                        Fechar
+                    </button>
+                </div>
+            </div>
+
+
+
+            <!-- Formulário de Reserva -->
+            <section id="formulario" class="relative z-20 text-center p-4 sm:p-10">
+                <form class="p-4 rounded-md shadow-md max-w-full sm:max-w-xs mx-auto bg-gray-800 bg-opacity-80">
+                    <h2 class="text-lg font-bold text-blue-200 mb-4">Reserve sua viagem</h2>
+
+                    <!-- Data de Início -->
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-white mb-2">Data de Início</label>
+                        <input type="date" id="data_inicio" required
+                            class="w-full p-3 bg-gray-700 text-white rounded-lg focus:ring-2 focus:ring-indigo-500 text-base border border-gray-600">
+                    </div>
+
+                    <!-- Data de Retorno -->
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-white mb-2">Data de Retorno</label>
+                        <input type="date" id="data_retorno" required
+                            class="w-full p-3 bg-gray-700 text-white rounded-lg focus:ring-2 focus:ring-indigo-500 text-base border border-gray-600">
+                    </div>
+
+                    <!-- Número de Pessoas -->
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-white mb-2">Número de Pessoas</label>
+                        <select id="numero_pessoas"
+                            class="w-full p-3 bg-gray-700 text-white rounded-lg focus:ring-2 focus:ring-indigo-500 text-base border border-gray-600">
+                            <option value="1">1 Pessoa</option>
+                            <option value="2">2 Pessoas</option>
+                            <option value="3">3 Pessoas</option>
+                            <option value="4">4 Pessoas</option>
+                            <option value="5">5 Pessoas</option>
+                            <option value="6">6 Pessoas</option>
+                            <option value="7">7 Pessoas</option>
+                        </select>
+                    </div>
+
+                    <!-- E-mail -->
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-white mb-2">E-mail</label>
+                        <input type="email" id="email" placeholder="seuemail@exemplo.com" required
+                            class="w-full p-3 bg-gray-700 text-white rounded-lg focus:ring-2 focus:ring-indigo-500 text-base border border-gray-600">
+                    </div>
+
+                    <!-- Botão Enviar -->
+                    <button type="submit"
+                        class="w-full p-3 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition duration-200 text-base">
+                        <i class="fas fa-paper-plane mr-2"></i> Enviar
+                    </button>
+                </form>
+            </section>
+
+            <!-- Botão Voltar -->
+            <div class="relative z-20 text-center p-4">
+                <a href="/index.html">
+                    <button
+                        class="p-2 bg-gray-700 text-white font-medium rounded-md hover:bg-gray-600 transition duration-200 text-sm">
+                        Voltar
+                    </button>
+                </a>
+            </div>
+    </main>
+</body>
+
+</html>

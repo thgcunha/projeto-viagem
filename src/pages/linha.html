@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Viagem</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Fontes e Ícones -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md">
+        <h1 class="text-2xl font-semibold text-center text-blue-200 mb-4">Detalhes da Sua Viagem</h1>
+
+        <!-- Linha Aérea -->
+        <div class="mb-4">
+            <label class="block text-sm font-medium mb-2">Escolha a Linha Aérea</label>
+            <select id="linha_aerea" class="w-full p-3 bg-gray-700 text-white rounded-lg border border-gray-600">
+                <option value="LATAM">LATAM</option>
+                <option value="Gol">Gol</option>
+                <option value="Azul">Azul</option>
+                <option value="United Airlines">United Airlines</option>
+                <option value="Emirates">Emirates</option>
+            </select>
+        </div>
+
+        <!-- Classe de Viagem -->
+        <div class="mb-4">
+            <label class="block text-sm font-medium mb-2">Classe de Viagem</label>
+            <select id="classe_viagem" class="w-full p-3 bg-gray-700 text-white rounded-lg border border-gray-600">
+                <option value="Economica">Econômica</option>
+                <option value="Executiva">Executiva</option>
+                <option value="Primeira Classe">Primeira Classe</option>
+            </select>
+        </div>
+
+        <!-- Bagagem Extra -->
+        <div class="mb-4 flex items-center">
+            <input type="checkbox" id="bagagem_extra" class="mr-2 w-5 h-5">
+            <label for="bagagem_extra" class="text-sm">Adicionar bagagem extra</label>
+        </div>
+
+        <!-- Botão de Confirmação -->
+        <button id="confirmar" class="w-full p-3 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition duration-200 text-base">
+            <i class="fas fa-check-circle mr-2"></i> Confirmar Reserva
+        </button>
+    </div>
+
+    <script>
+        document.getElementById('confirmar').addEventListener('click', function () {
+            const linhaAerea = document.getElementById('linha_aerea').value;
+            const classeViagem = document.getElementById('classe_viagem').value;
+            const bagagemExtra = document.getElementById('bagagem_extra').checked ? 'Sim' : 'Não';
+
+            const urlParams = new URLSearchParams({
+                linhaAerea: linhaAerea,
+                classeViagem: classeViagem,
+                bagagemExtra: bagagemExtra
+            });
+
+            window.location.href = detalhes-confirmacao.html?${urlParams.toString()};
+        });
+    </script>
+</body>
+
+</html>

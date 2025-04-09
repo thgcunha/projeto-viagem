@@ -62,6 +62,9 @@ document.querySelector("form")?.addEventListener("submit", function (event) {
         return;
     }
 
+
+    
+    
     showNotification(
         `Obrigado, ${nome}! Sua reserva para ${pessoas} pessoa(s) foi confirmada! De: ${dataInicio.toLocaleDateString()} até ${dataRetorno.toLocaleDateString()}`,
         "success"
