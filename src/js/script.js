@@ -4,25 +4,19 @@ function updateVideoSource() {
     const sourceElement = document.getElementById('video-source');
     const isMobile = window.innerWidth <= 768;
 
-    if (isMobile) {
-        // Troca para GIF ou vídeo leve em telas pequenas
-        sourceElement.setAttribute('src', 'src/movie/blue sky clouds GIF by hateplow.gif');
-        videoElement.load(); // Recarrega o vídeo
-    } else {
-        // Volta ao vídeo original em telas maiores
-        sourceElement.setAttribute('src', 'https://cdn.coverr.co/videos/coverr-airplane-flying-through-the-clouds-1025/720p.mp4');
+    if (videoElement && sourceElement) {
+        const novoSrc = isMobile
+            ? 'src/movie/blue-sky-clouds.gif'
+            : 'https://cdn.coverr.co/videos/coverr-airplane-flying-through-the-clouds-1025/720p.mp4';
+
+        sourceElement.setAttribute('src', novoSrc);
         videoElement.load(); // Recarrega o vídeo
     }
 }
-
-// Atualiza o vídeo quando a página carrega
 window.addEventListener('load', updateVideoSource);
-
-// Atualiza o vídeo quando a janela é redimensionada
 window.addEventListener('resize', updateVideoSource);
 
-
-
+// Efeito parallax no vídeo
 window.addEventListener('scroll', function () {
     const video = document.querySelector('video');
     if (video) {
@@ -31,14 +25,58 @@ window.addEventListener('scroll', function () {
     }
 });
 
-// Botões "Planejar Viagem"
-document.querySelectorAll('.btn-planejar').forEach(button => {
-    button.addEventListener('click', () => {
-        showNotification("Você foi redirecionado para planejar a viagem!");
-    });
-});
+// Notificação com botão de redirecionamento
+function showNotification(mensagem, tipo) {
+    // Cria o overlay
+    const overlay = document.createElement("div");
+    overlay.className = "notification-overlay";
 
-// Validação de formulário
+    // Cria o container da notificação
+    const container = document.createElement("div");
+    container.className = `notification ${tipo}`;
+
+    // Mensagem
+    const texto = document.createElement("p");
+    texto.textContent = mensagem;
+
+    container.appendChild(texto);
+
+    // Só adiciona o botão se for sucesso
+    if (tipo === "success") {
+        const botao = document.createElement("button");
+        botao.className = "notification-button";
+        botao.textContent = "Estou pronto!";
+
+        botao.addEventListener("click", () => {
+            document.body.removeChild(container);
+            document.body.removeChild(overlay);
+            window.location.href = "linha.html";
+        });
+
+        container.appendChild(botao);
+    }
+
+    // Adiciona ao body
+    document.body.appendChild(overlay);
+    document.body.appendChild(container);
+
+    // Força o "fade in"
+    setTimeout(() => {
+        container.classList.add("show");
+    }, 10);
+
+    // Remove depois de 15s automaticamente
+    setTimeout(() => {
+        if (document.body.contains(container)) {
+            document.body.removeChild(container);
+            document.body.removeChild(overlay);
+        }
+    }, 15000);
+}
+
+
+
+// Validação de formulário e confirmação da viagem
 document.querySelector("form")?.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -46,7 +84,7 @@ document.querySelector("form")?.addEventListener("submit", function (event) {
     const dataRetorno = new Date(document.getElementById("data_retorno")?.value);
     const pessoas = document.getElementById("numero_pessoas")?.value;
 
-    if (!dataInicio || !dataRetorno) {
+    if (!dataInicio || !dataRetorno || isNaN(dataInicio.getTime()) || isNaN(dataRetorno.getTime())) {
         showNotification("Por favor, preencha todas as datas.", "error");
         return;
     }
@@ -62,62 +100,20 @@ document.querySelector("form")?.addEventListener("submit", function (event) {
         return;
     }
 
-
-    
-    
     showNotification(
-        `Obrigado, ${nome}! Sua reserva para ${pessoas} pessoa(s) foi confirmada! De: ${dataInicio.toLocaleDateString()} até ${dataRetorno.toLocaleDateString()}`,
+        `Obrigado, ${nome}! Sua reserva para ${pessoas} pessoa(s) foi confirmada! De: ${dataInicio.toLocaleDateString()} até ${dataRetorno.toLocaleDateString()}.
+        Quando estiver pronto para seguir, clique no botão abaixo`
+        ,
         "success"
     );
 
     event.target.reset();
 });
 
-// Notificações
-function showNotification(message, type) {
-    // Remover notificações antigas
-    document.querySelector(".notification")?.remove();
-    document.querySelector(".notification-overlay")?.remove();
-
-    // Criar overlay escuro
-    const overlay = document.createElement("div");
-    overlay.className = "notification-overlay";
-    document.body.appendChild(overlay);
-    overlay.style.display = "block";
-
-    // Criar a notificação
-    const notification = document.createElement("div");
-    notification.className = `notification ${type}`;
-    notification.textContent = message;
-    document.body.appendChild(notification);
-
-    // Exibir a notificação
-    setTimeout(() => {
-        notification.classList.add("show");
-    }, 10);
-
-    // Fechar ao clicar no overlay ou na notificação
-    function closeNotification() {
-        notification.classList.remove("show");
-        setTimeout(() => {
-            notification.remove();
-            overlay.style.display = "none";
-            overlay.remove();
-        }, 300);
-    }
-
-    overlay.addEventListener("click", closeNotification);
-    notification.addEventListener("click", closeNotification);
-
-    // Remover automaticamente após alguns segundos
-    setTimeout(closeNotification, 3000);
-}
-
-
 // FAQ Modal
-const faqIcon = document.getElementById('faq-icon');
-const faqModal = document.getElementById('faq-modal');
-const closeFaq = document.getElementById('close-faq');
+let faqIcon = document.getElementById('faq-icon');
+let faqModal = document.getElementById('faq-modal');
+let closeFaq = document.getElementById('close-faq');
 
 if (faqIcon && faqModal && closeFaq) {
     faqIcon.addEventListener('click', () => faqModal.classList.remove('hidden'));
@@ -126,6 +122,7 @@ if (faqIcon && faqModal && closeFaq) {
         if (event.target === faqModal) faqModal.classList.add('hidden');
     });
 }
+
 
 
 

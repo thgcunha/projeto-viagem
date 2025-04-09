@@ -36,7 +36,7 @@
         </video>
 
         <!-- Imagem alternativa para telas menores -->
-        <img src="https://w.wallhaven.cc/full/wq/wallhaven-wqygwx.jpg" alt="Imagem alternativa"
+        <img src="https://w.wallhaven.cc/full/wq/wallhaven-wqygwx.jpg" alt="Imagem alternativa" loading="lazy"
             class="absolute top-0 left-0 w-full h-full object-cover z-0 block sm:hidden">
 
         <!-- Overlay escuro -->
@@ -95,28 +95,29 @@
 
         <!-- Formulário de Reserva -->
         <section id="formulario" class="relative z-20 text-center p-4 sm:p-10">
-            <form class="p-4 rounded-md shadow-md max-w-full sm:max-w-xs mx-auto bg-gray-800 bg-opacity-80">
-                <h2 class="text-lg font-bold text-blue-200 mb-4">Reserve sua viagem</h2>
+            <form class="p-4 sm:p-6 rounded-xl shadow-lg max-w-md mx-auto bg-gray-900 bg-opacity-70 space-y-4">
+                <h2 class="text-xl font-bold text-blue-200">Reserve sua viagem</h2>
 
                 <!-- Data de Início -->
-                <div class="mb-4">
-                    <label class="block text-sm font-medium text-white mb-2">Data de Início</label>
+                <div class="text-left">
+                    <label for="data_inicio" class="block text-sm font-medium text-white mb-1">Data de Início</label>
                     <input type="date" id="data_inicio" required
-                        class="w-full p-3 bg-gray-700 text-white rounded-lg focus:ring-2 focus:ring-indigo-500 text-base border border-gray-600">
+                        class="w-full p-2.5 sm:p-3 bg-gray-900 text-white rounded-md focus:ring-2 focus:ring-indigo-500 text-sm sm:text-base border border-gray-700">
                 </div>
 
                 <!-- Data de Retorno -->
-                <div class="mb-4">
-                    <label class="block text-sm font-medium text-white mb-2">Data de Retorno</label>
+                <div class="text-left">
+                    <label for="data_retorno" class="block text-sm font-medium text-white mb-1">Data de Retorno</label>
                     <input type="date" id="data_retorno" required
-                        class="w-full p-3 bg-gray-700 text-white rounded-lg focus:ring-2 focus:ring-indigo-500 text-base border border-gray-600">
+                        class="w-full p-2.5 sm:p-3 bg-gray-900 text-white rounded-md focus:ring-2 focus:ring-indigo-500 text-sm sm:text-base border border-gray-700">
                 </div>
 
                 <!-- Número de Pessoas -->
-                <div class="mb-4">
-                    <label class="block text-sm font-medium text-white mb-2">Número de Pessoas</label>
+                <div class="text-left">
+                    <label for="numero_pessoas" class="block text-sm font-medium text-white mb-1">Número de
+                        Pessoas</label>
                     <select id="numero_pessoas"
-                        class="w-full p-3 bg-gray-700 text-white rounded-lg focus:ring-2 focus:ring-indigo-500 text-base border border-gray-600">
+                        class="w-full p-2.5 sm:p-3 bg-gray-900 text-white rounded-md focus:ring-2 focus:ring-indigo-500 text-sm sm:text-base border border-gray-700">
                         <option value="1">1 Pessoa</option>
                         <option value="2">2 Pessoas</option>
                         <option value="3">3 Pessoas</option>
@@ -128,16 +129,18 @@
                 </div>
 
                 <!-- E-mail -->
-                <div class="mb-4">
-                    <label class="block text-sm font-medium text-white mb-2">E-mail</label>
+                <div class="text-left">
+                    <label for="email" class="block text-sm font-medium text-white mb-1">E-mail</label>
                     <input type="email" id="email" placeholder="seuemail@exemplo.com" required
-                        class="w-full p-3 bg-gray-700 text-white rounded-lg focus:ring-2 focus:ring-indigo-500 text-base border border-gray-600">
+                        class="w-full p-2.5 sm:p-3 bg-gray-900 text-white rounded-md focus:ring-2 focus:ring-indigo-500 text-sm sm:text-base border border-gray-700">
                 </div>
 
                 <!-- Botão Enviar -->
                 <button type="submit"
-                    class="w-full p-3 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition duration-200 text-base">
-                    <i class="fas fa-paper-plane mr-2"></i> Enviar
+                    class="w-full p-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition duration-200 text-sm sm:text-base">
+                    <a href="/src/pages/linha.html" class="block w-full h-full text-white no-underline">
+                        <i class="fas fa-paper-plane mr-2"></i> Enviar
+                    </a>
                 </button>
             </form>
         </section>
