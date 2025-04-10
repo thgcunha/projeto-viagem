@@ -125,5 +125,62 @@ if (faqIcon && faqModal && closeFaq) {
 
 
 
+const linhaSelect = document.getElementById("linha_aerea");
+const classeSelect = document.getElementById("classe_viagem");
+const bagagemCheckbox = document.getElementById("bagagem_extra");
+const confirmarBtn = document.getElementById("confirmar");
+
+// Criação do resumo dinâmico
+const resumoDiv = document.createElement("div");
+resumoDiv.className = "mt-6 p-4 bg-gray-700 rounded-lg text-sm space-y-2 text-blue-100";
+document.querySelector(".bg-gray-800").appendChild(resumoDiv);
+
+function atualizarResumo() {
+    const linha = linhaSelect.value;
+    const classe = classeSelect.value;
+    const bagagem = bagagemCheckbox.checked ? "Sim" : "Não";
+
+    resumoDiv.innerHTML = `
+    <p><strong>Linha Aérea:</strong> ${linha}</p>
+    <p><strong>Classe:</strong> ${classe}</p>
+    <p><strong>Bagagem Extra:</strong> ${bagagem}</p>
+    `;
+}
+
+linhaSelect.addEventListener("change", atualizarResumo);
+classeSelect.addEventListener("change", atualizarResumo);
+bagagemCheckbox.addEventListener("change", atualizarResumo);
+
+// Interação no botão
+confirmarBtn.addEventListener("click", () => {
+    const linha = linhaSelect.value;
+    const classe = classeSelect.value;
+    const bagagem = bagagemCheckbox.checked;
+
+    // Simula ação + redireciona depois de 2s
+    confirmarBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Processando...`;
+    confirmarBtn.disabled = true;
+
+    setTimeout(() => {
+        alert(`Reserva confirmada com:\n- ${linha}\n- ${classe}\n- Bagagem extra: ${bagagem ? "Sim" : "Não"}`);
+        window.location.href = "/src/pages/linha.html";
+    }, 2000);
+});
+
+// Inicia com o resumo já preenchido
+atualizarResumo();
+
+
+
+    
+
+
+
+
+
+
+
+
+
 
 

@@ -98,56 +98,59 @@
 
 
             <!-- Formulário de Reserva -->
-        <section id="formulario" class="relative z-20 text-center p-4 sm:p-10">
-            <form class="p-4 sm:p-6 rounded-xl shadow-lg max-w-md mx-auto bg-gray-900 bg-opacity-70 space-y-4">
-                <h2 class="text-xl font-bold text-blue-200">Reserve sua viagem</h2>
+            <section id="formulario" class="relative z-20 text-center p-4 sm:p-10">
+                <form class="p-4 sm:p-6 rounded-xl shadow-lg max-w-md mx-auto bg-gray-900 bg-opacity-70 space-y-4">
+                    <h2 class="text-xl font-bold text-blue-200">Reserve sua viagem</h2>
 
-                <!-- Data de Início -->
-                <div class="text-left">
-                    <label for="data_inicio" class="block text-sm font-medium text-white mb-1">Data de Início</label>
-                    <input type="date" id="data_inicio" required
-                        class="w-full p-2.5 sm:p-3 bg-gray-900 text-white rounded-md focus:ring-2 focus:ring-indigo-500 text-sm sm:text-base border border-gray-700">
-                </div>
+                    <!-- Data de Início -->
+                    <div class="text-left w-full">
+                        <label for="data_inicio" class="block text-sm font-medium text-white mb-1">Data de
+                            Início</label>
+                        <input type="date" id="data_inicio" required
+                            class="w-full p-2.5 sm:p-3 bg-gray-900 text-white rounded-md focus:ring-2 focus:ring-indigo-500 text-sm sm:text-base border border-gray-700">
+                    </div>
 
-                <!-- Data de Retorno -->
-                <div class="text-left">
-                    <label for="data_retorno" class="block text-sm font-medium text-white mb-1">Data de Retorno</label>
-                    <input type="date" id="data_retorno" required
-                        class="w-full p-2.5 sm:p-3 bg-gray-900 text-white rounded-md focus:ring-2 focus:ring-indigo-500 text-sm sm:text-base border border-gray-700">
-                </div>
+                    <!-- Data de Retorno -->
+                    <div class="text-left w-full">
+                        <label for="data_retorno" class="block text-sm font-medium text-white mb-1">Data de
+                            Retorno</label>
+                        <input type="date" id="data_retorno" required
+                            class="w-full p-2.5 sm:p-3 bg-gray-900 text-white rounded-md focus:ring-2 focus:ring-indigo-500 text-sm sm:text-base border border-gray-700">
+                    </div>
 
-                <!-- Número de Pessoas -->
-                <div class="text-left">
-                    <label for="numero_pessoas" class="block text-sm font-medium text-white mb-1">Número de
-                        Pessoas</label>
-                    <select id="numero_pessoas"
-                        class="w-full p-2.5 sm:p-3 bg-gray-900 text-white rounded-md focus:ring-2 focus:ring-indigo-500 text-sm sm:text-base border border-gray-700">
-                        <option value="1">1 Pessoa</option>
-                        <option value="2">2 Pessoas</option>
-                        <option value="3">3 Pessoas</option>
-                        <option value="4">4 Pessoas</option>
-                        <option value="5">5 Pessoas</option>
-                        <option value="6">6 Pessoas</option>
-                        <option value="7">7 Pessoas</option>
-                    </select>
-                </div>
 
-                <!-- E-mail -->
-                <div class="text-left">
-                    <label for="email" class="block text-sm font-medium text-white mb-1">E-mail</label>
-                    <input type="email" id="email" placeholder="seuemail@exemplo.com" required
-                        class="w-full p-2.5 sm:p-3 bg-gray-900 text-white rounded-md focus:ring-2 focus:ring-indigo-500 text-sm sm:text-base border border-gray-700">
-                </div>
+                    <!-- Número de Pessoas -->
+                    <div class="text-left">
+                        <label for="numero_pessoas" class="block text-sm font-medium text-white mb-1">Número de
+                            Pessoas</label>
+                        <select id="numero_pessoas"
+                            class="w-full p-2.5 sm:p-3 bg-gray-900 text-white rounded-md focus:ring-2 focus:ring-indigo-500 text-sm sm:text-base border border-gray-700">
+                            <option value="1">1 Pessoa</option>
+                            <option value="2">2 Pessoas</option>
+                            <option value="3">3 Pessoas</option>
+                            <option value="4">4 Pessoas</option>
+                            <option value="5">5 Pessoas</option>
+                            <option value="6">6 Pessoas</option>
+                            <option value="7">7 Pessoas</option>
+                        </select>
+                    </div>
 
-                <!-- Botão Enviar -->
-                <button type="submit"
-                    class="w-full p-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition duration-200 text-sm sm:text-base">
-                    <a href="/src/pages/linha.html" class="block w-full h-full text-white no-underline">
-                        <i class="fas fa-paper-plane mr-2"></i> Enviar
-                    </a>
-                </button>
-            </form>
-        </section>
+                    <!-- E-mail -->
+                    <div class="text-left">
+                        <label for="email" class="block text-sm font-medium text-white mb-1">E-mail</label>
+                        <input type="email" id="email" placeholder="seuemail@exemplo.com" required
+                            class="w-full p-2.5 sm:p-3 bg-gray-900 text-white rounded-md focus:ring-2 focus:ring-indigo-500 text-sm sm:text-base border border-gray-700">
+                    </div>
+
+                    <!-- Botão Enviar -->
+                    <button type="submit"
+                        class="w-full p-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition duration-200 text-sm sm:text-base">
+                        <a href="/pages/linha.html" class="block w-full h-full text-white no-underline">
+                            <i class="fas fa-paper-plane mr-2"></i> Enviar
+                        </a>
+                    </button>
+                </form>
+            </section>
 
             <!-- Botão Voltar -->
             <div class="relative z-20 text-center p-4">
