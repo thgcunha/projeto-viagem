@@ -68,7 +68,7 @@ function showNotification(mensagem, tipo) {
             document.body.removeChild(container);
             document.body.removeChild(overlay);
         }
-    }, 3000);
+    }, 7000);
 }
 
 // Validação de formulário e confirmação da viagem
