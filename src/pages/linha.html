@@ -5,13 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detalhes da Viagem</title>
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../style.css" />
     <link href="./src/output.css" rel="stylesheet">
     <link href="./src/style.css" rel="stylesheet">
-    <script src="../js/script.js" defer></script>
+    <script src="./js/script.js" defer></script>
 
     <!-- Fontes e Ícones -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -24,7 +24,8 @@
 
 <body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-4 font-[Poppins]">
 
-    <div class="bg-gray-800 p-6 rounded-2xl shadow-2xl w-full max-w-md transition-all duration-500 ease-in-out detalhes-viagem">
+    <div
+        class="bg-gray-800 p-6 rounded-2xl shadow-2xl w-full max-w-md transition-all duration-500 ease-in-out detalhes-viagem">
         <h1 class="text-2xl font-semibold text-center text-blue-300 mb-6">Detalhes da Sua Viagem</h1>
 
         <!-- Linha Aérea -->
@@ -35,6 +36,7 @@
                     voo</div>
             </label>
             <select id="linha_aerea" class="w-full p-3 bg-gray-700 text-white rounded-lg border border-gray-600">
+                <option value="" >Selecione uma companhia</option>
                 <option value="LATAM">LATAM</option>
                 <option value="Gol">Gol</option>
                 <option value="Azul">Azul</option>
@@ -51,6 +53,7 @@
                     desejado</div>
             </label>
             <select id="classe_viagem" class="w-full p-3 bg-gray-700 text-white rounded-lg border border-gray-600">
+                <option value="" >Selecione uma classe</option>
                 <option value="Economica">Econômica</option>
                 <option value="Executiva">Executiva</option>
                 <option value="Primeira Classe">Primeira Classe</option>
@@ -66,6 +69,12 @@
                 </div>
             </label>
         </div>
+
+        <!-- Preço Dinâmico -->
+        <div id="preco_total" class="text-center text-lg font-semibold text-green-400 mb-4">
+            Total: R$ 0,00
+        </div>
+
 
 
         <button id="assento"
@@ -96,73 +105,134 @@
 
     <script>
         // Modal de Seleção de Assento
-const assentos = document.getElementById("assentos");
-const erroAssento = document.getElementById("erro_assento");
-const btnConfirmar = document.getElementById("btn-confirmar");
-const ocupados = [3, 6, 12, 18];
-let assentoSelecionado = null;
+        const assentos = document.getElementById("assentos");
+        const erroAssento = document.getElementById("erro_assento");
+        const btnConfirmar = document.getElementById("btn-confirmar");
+        const ocupados = [3, 6, 12, 18];
+        let assentoSelecionado = null;
 
-for (let i = 1; i <= 28; i++) {
-    const coluna = (i - 1) % 6;
-    if (coluna === 3) {
-        const corredor = document.createElement("div");
-        corredor.className = "w-3 sm:w-4";
-        assentos.appendChild(corredor);
-    }
+        for (let i = 1; i <= 28; i++) {
+            const coluna = (i - 1) % 6;
+            if (coluna === 3) {
+                const corredor = document.createElement("div");
+                corredor.className = "w-3 sm:w-4";
+                assentos.appendChild(corredor);
+            }
 
-    const btn = document.createElement("button");
-    btn.textContent = `A${i}`;
-    btn.className = `assento relative group bg-blue-300 text-sm font-medium p-2 sm:p-2.5 rounded transition ${ocupados.includes(i) ? "opacity-40 cursor-not-allowed" : "hover:bg-blue-500"}`;
-    btn.disabled = ocupados.includes(i);
+            const btn = document.createElement("button");
+            btn.textContent = `A${i}`;
+            btn.className = `assento relative group bg-blue-300 text-sm font-medium p-2 sm:p-2.5 rounded transition ${ocupados.includes(i) ? "opacity-40 cursor-not-allowed" : "hover:bg-blue-500"}`;
+            btn.disabled = ocupados.includes(i);
 
-    const tooltip = document.createElement("span");
-    tooltip.className =
-        "absolute -top-7 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity z-10";
-    tooltip.textContent = "Clique para selecionar";
-    btn.appendChild(tooltip);
+            const tooltip = document.createElement("span");
+            tooltip.className =
+                "absolute -top-7 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity z-10";
+            tooltip.textContent = "Clique para selecionar";
+            btn.appendChild(tooltip);
 
-    btn.addEventListener("click", () => {
-        if (ocupados.includes(i)) return;
+            btn.addEventListener("click", () => {
+                if (ocupados.includes(i)) return;
 
-        document.querySelectorAll(".assento").forEach(a =>
-            a.classList.remove("bg-green-500", "ring-2", "ring-green-400")
-        );
-        btn.classList.add("bg-green-500", "ring-2", "ring-green-400");
-        assentoSelecionado = i;
-        erroAssento.classList.add("hidden");
-    });
+                document.querySelectorAll(".assento").forEach(a =>
+                    a.classList.remove("bg-green-500", "ring-2", "ring-green-400")
+                );
+                btn.classList.add("bg-green-500", "ring-2", "ring-green-400");
+                assentoSelecionado = i;
+                erroAssento.classList.add("hidden");
+            });
 
-    assentos.appendChild(btn);
-}
+            assentos.appendChild(btn);
+        }
 
-function toggleModal() {
-    const modal = document.getElementById("assento-modal");
-    modal.classList.toggle("hidden");
-    modal.classList.toggle("flex");
-    erroAssento.classList.add("hidden");
-    assentoSelecionado = null;
-    document.querySelectorAll(".assento").forEach(a =>
-        a.classList.remove("bg-green-500", "ring-2", "ring-green-400")
-    );
-    btnConfirmar.innerHTML = "Confirmar";
-    btnConfirmar.classList.remove("bg-green-600", "hover:bg-green-700");
-    btnConfirmar.classList.add("bg-blue-600", "hover:bg-blue-700");
-}
+        function toggleModal() {
+            const modal = document.getElementById("assento-modal");
+            modal.classList.toggle("hidden");
+            modal.classList.toggle("flex");
+            erroAssento.classList.add("hidden");
+            assentoSelecionado = null;
+            document.querySelectorAll(".assento").forEach(a =>
+                a.classList.remove("bg-green-500", "ring-2", "ring-green-400")
+            );
+            btnConfirmar.innerHTML = "Confirmar";
+            btnConfirmar.classList.remove("bg-green-600", "hover:bg-green-700");
+            btnConfirmar.classList.add("bg-blue-600", "hover:bg-blue-700");
+        }
 
-function confirmarReserva() {
-    if (!assentoSelecionado) {
-        erroAssento.classList.remove("hidden");
-        return;
-    }
+        function confirmarReserva() {
+            if (!assentoSelecionado) {
+                erroAssento.classList.remove("hidden");
+                return;
+            }
 
-    btnConfirmar.innerHTML = '<i class="fas fa-check-circle animate-bounce mr-2"></i> Reserva Confirmada!';
-    btnConfirmar.classList.remove("bg-blue-600", "hover:bg-blue-700");
-    btnConfirmar.classList.add("bg-green-600", "hover:bg-green-700");
-}
+            btnConfirmar.innerHTML = '<i class="fas fa-check-circle animate-bounce mr-2"></i> Reserva Confirmada!';
+            btnConfirmar.classList.remove("bg-blue-600", "hover:bg-blue-700");
+            btnConfirmar.classList.add("bg-green-600", "hover:bg-green-700");
+        }
 
-document.getElementById('assento').addEventListener('click', toggleModal);
+        document.getElementById('assento').addEventListener('click', toggleModal);
 
     </script>
+
+
+    <script>
+        const linhaAerea = document.getElementById('linha_aerea');
+        const classeViagem = document.getElementById('classe_viagem');
+        const bagagemExtra = document.getElementById('bagagem_extra');
+        const precoTotal = document.getElementById('preco_total');
+
+        function calcularPreco() {
+            let precoBase = 0;
+
+            // Define preço base da linha aérea
+            switch (linhaAerea.value) {
+                case 'LATAM':
+                    precoBase += 500;
+                    break;
+                case 'Gol':
+                    precoBase += 480;
+                    break;
+                case 'Azul':
+                    precoBase += 520;
+                    break;
+                case 'United Airlines':
+                    precoBase += 800;
+                    break;
+                case 'Emirates':
+                    precoBase += 1200;
+                    break;
+            }
+
+            // Adiciona valor da classe
+            switch (classeViagem.value) {
+                case 'Economica':
+                    precoBase += 0;
+                    break;
+                case 'Executiva':
+                    precoBase += 400;
+                    break;
+                case 'Primeira Classe':
+                    precoBase += 1000;
+                    break;
+            }
+
+            // Bagagem extra
+            if (bagagemExtra.checked) {
+                precoBase += 150;
+            }
+
+            // Atualiza o HTML
+            precoTotal.textContent = `Total: R$ ${precoBase.toFixed(2).replace('.', ',')}`;
+        }
+
+        // Atualiza sempre que algo for alterado
+        linhaAerea.addEventListener('change', calcularPreco);
+        classeViagem.addEventListener('change', calcularPreco);
+        bagagemExtra.addEventListener('change', calcularPreco);
+
+        // Inicializa com os valores atuais
+        calcularPreco();
+    </script>
+
 
 
 </body>

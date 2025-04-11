@@ -68,7 +68,7 @@ function showNotification(mensagem, tipo) {
             document.body.removeChild(container);
             document.body.removeChild(overlay);
         }
-    }, 7000);
+    }, 12000);
 }
 
 // Validação de formulário e confirmação da viagem
@@ -184,6 +184,11 @@ confirmarBtn.addEventListener("click", () => {
 
 // Inicia com o resumo já preenchido
 atualizarResumo();
+
+
+
+
+
 
 
 // Modal de Seleção de Assento
