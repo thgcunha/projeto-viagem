@@ -80,11 +80,6 @@ document.querySelector("form")?.addEventListener("submit", function (event) {
     const pessoas = document.getElementById("numero_pessoas")?.value;
 
     // Verifique os campos do formulário
-    console.log("Data Início:", dataInicio);
-    console.log("Data Retorno:", dataRetorno);
-    console.log("Número de Pessoas:", pessoas);
-
-    // Verificação de dados de entrada
     if (!dataInicio || !dataRetorno || isNaN(dataInicio.getTime()) || isNaN(dataRetorno.getTime())) {
         showNotification("Por favor, preencha todas as datas.", "error");
         return;
@@ -95,22 +90,50 @@ document.querySelector("form")?.addEventListener("submit", function (event) {
         return;
     }
 
-    const nome = prompt("Digite seu nome:");
-    if (!nome) {
-        showNotification("Por favor, insira seu nome para confirmar a reserva.", "error");
-        return;
-    }
-
-    // Exibe a notificação de sucesso
-    showNotification(
-        `Obrigado, ${nome}! Sua reserva para ${pessoas} pessoa(s) foi confirmada! De: ${dataInicio.toLocaleDateString()} até ${dataRetorno.toLocaleDateString()}.
-        Quando estiver pronto para seguir, clique no botão abaixo.`,
-        "success"
-    );
-
-    event.target.reset(); // Limpa o formulário
+    // Exibe modal para solicitar o nome
+    solicitarNome(dataInicio, dataRetorno, pessoas, () => {
+        event.target.reset(); // Limpa o formulário após confirmação
+    });
 });
 
+function solicitarNome(dataInicio, dataRetorno, pessoas, callback) {
+    if (document.getElementById("nome-container")) return;
+
+    const container = document.createElement("div");
+    container.id = "nome-container";
+    container.className = "fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50";
+
+    container.innerHTML = `
+        <div class="bg-white p-6 rounded-xl shadow-lg max-w-sm w-full space-y-4 text-center animate-fade-in">
+            <h2 class="text-lg font-semibold">Confirme sua reserva</h2>
+            <input type="text" id="input-nome" placeholder="Digite seu nome" class="w-full border px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button id="confirmar-nome" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-75 ease-in-out">
+                Confirmar
+            </button>
+        </div>
+    `;
+
+    document.body.appendChild(container);
+
+    document.getElementById("confirmar-nome").addEventListener("click", () => {
+        const nome = document.getElementById("input-nome").value.trim();
+
+        if (!nome) {
+            showNotification("Por favor, insira seu nome para confirmar a reserva.", "error");
+            return;
+        }
+
+        showNotification(
+            `Obrigado, ${nome}! Sua reserva para ${pessoas} pessoa(s) foi confirmada! De: ${dataInicio.toLocaleDateString()} até ${dataRetorno.toLocaleDateString()}.
+Quando estiver pronto para seguir, clique no botão abaixo.`,
+            "success"
+        );
+
+        container.remove(); // Remove o modal da tela
+
+        if (typeof callback === "function") callback(); // Executa o que precisa após a confirmação
+    });
+}
 
 
 // FAQ Modal
