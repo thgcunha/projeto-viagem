@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{html,js}"],
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -8,25 +11,27 @@ module.exports = {
       },
       colors: {
         ocre: {
-          light: '#F4D06F', // Ocre claro, caloroso
-          DEFAULT: '#D78A04', // Ocre tradicional
-          dark: '#935400', // Ocre escuro para contraste
+          light: '#F4D06F',
+          DEFAULT: '#D78A04',
+          dark: '#935400',
         },
         sky: {
-          light: '#CDEFFD', // Azul claro, lembra céu ensolarado
-          DEFAULT: '#8AB4F8', // Azul típico do céu
-          dark: '#22577E', // Azul profundo, para detalhes
+          light: '#CDEFFD',
+          DEFAULT: '#8AB4F8',
+          dark: '#22577E',
         },
-        cloud: '#F5F5F5', // Branco suave, remete a nuvens
+        cloud: '#F5F5F5',
         gray: {
-          airport: '#A9A9A9', // Cinza neutro, elegante
+          airport: '#A9A9A9',
         },
-        sand: '#C8A165', // Marrom areia, quente e natural
-        brightWhite: '#FAFAFA', // Branco mais forte
+        sand: '#C8A165',
+        brightWhite: '#FAFAFA',
       },
       animation: {
         'spin-slow': 'spin 3s linear infinite',
         'bounce-slow': 'bounce 2s infinite',
+        'fade-in': 'fadeIn 0.5s ease-out',
+        'glow': 'glow 2s ease-in-out infinite',
       },
       keyframes: {
         'spin-slow': {
@@ -37,10 +42,16 @@ module.exports = {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-20px)' },
         },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        glow: {
+          '0%, 100%': { filter: 'drop-shadow(0 0 5px rgba(255,255,255,0.5))' },
+          '50%': { filter: 'drop-shadow(0 0 20px rgba(255,255,255,1))' },
+        }
       },
     },
   },
   plugins: [],
 }
-
-
