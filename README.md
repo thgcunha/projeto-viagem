@@ -1,16 +1,54 @@
-# React + Vite
+# ✈️ Projeto Viagem (Travel App)
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Bem-vindo ao **Projeto Viagem**! Uma aplicação web moderna e premium desenvolvida para oferecer a melhor experiência na hora de simular e reservar pacotes de viagens para destinos incríveis ao redor do mundo.
 
-Currently, two official plugins are available:
+## 🌟 Visão Geral
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+O projeto foi criado inicialmente com HTML, CSS e JavaScript puros, e posteriormente **totalmente refatorado** para uma stack mais moderna e escalável, utilizando **React, Vite e Tailwind CSS**. 
 
-## React Compiler
+O foco principal desta refatoração foi criar um design **Glassmorphism**, com temas escuros (Dark Mode), responsividade avançada, micro-animações e um fluxo de reserva de viagens fluido e otimizado.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Tecnologias Utilizadas
 
-## Expanding the Oxlint configuration
+- **[React](https://react.dev/)**: Biblioteca JavaScript para criação das interfaces de usuário e componentes reutilizáveis.
+- **[Vite](https://vitejs.dev/)**: Ferramenta de build extremamente rápida para projetos front-end.
+- **[Tailwind CSS](https://tailwindcss.com/)**: Framework CSS utilitário focado no rápido desenvolvimento de interfaces premium e personalizadas.
+- **[React Router DOM](https://reactrouter.com/)**: Navegação instantânea e roteamento no lado do cliente.
+- **[Framer Motion](https://www.framer.com/motion/)**: Biblioteca de animações para trazer vida à aplicação com transições suaves.
+- **[Lucide Icons](https://lucide.dev/)**: Ícones modernos e elegantes.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## ✨ Funcionalidades
+
+- **Exploração de Destinos**: Navegue por diversos destinos (Paris, Nova Iorque, Grécia, Suíça, Tóquio, etc.) com vídeos dinâmicos de fundo.
+- **Formulário de Reserva**: Preenchimento intuitivo com validação rigorosa de datas (garantindo que a data de retorno seja posterior à data de ida).
+- **Checkout e Personalização da Viagem**: Tela detalhada de compra, onde o usuário pode escolher:
+  - Companhia Aérea (com variação de preços)
+  - Classe de Viagem (Econômica, Executiva, Primeira Classe)
+  - Bagagem Extra
+- **Mapeamento de Assentos Aéreos**: Seleção visual e interativa de assentos dentro de um modal customizado, impedindo a escolha de assentos já ocupados.
+- **Totalmente Responsivo**: Funciona perfeitamente em dispositivos móveis, tablets e monitores widescreen.
+
+## 📦 Como Rodar o Projeto Localmente
+
+1. Certifique-se de ter o [Node.js](https://nodejs.org/) instalado em sua máquina.
+2. Clone o repositório ou baixe o código.
+3. Abra o terminal na pasta do projeto e instale as dependências:
+   ```bash
+   npm install
+   ```
+4. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
+5. Acesse `http://localhost:5173` no seu navegador para ver o projeto em ação!
+
+## 💡 Próximos Passos (Roadmap)
+
+- [x] Refatoração completa da estrutura original para React.
+- [x] Reimplementação da tela de Assentos e Validações.
+- [ ] Integração com backend (APIs) para reserva real.
+- [ ] Autenticação de usuário e painel do cliente.
+- [ ] Implementação de sistema de pagamentos.
+
+---
+*Desenvolvido com dedicação por Thiago Cunha.*
